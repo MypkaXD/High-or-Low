@@ -54,9 +54,9 @@ Game playGame()
 			return (Game::WIN);
 		}
 		else if (temp < result)
-			std::cout << "Your guess is too high." << std::endl;
-		else if (temp > result)
 			std::cout << "Your guess is too low." << std::endl;
+		else if (temp > result)
+			std::cout << "Your guess is too high." << std::endl;
 	}
 	std::cout << "Sorry, you lose. The correct number was " << result << "." << std::endl;
 	return (Game::LOOSE);
