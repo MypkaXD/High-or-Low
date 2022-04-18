@@ -42,8 +42,9 @@ int getRandomNumber(int min, int max)
 	return static_cast<int>(rand() * fraction * (max - min + 1) + min);
 }
 
-Game playGame()
+Game highOrLow()
 {
+	std::cout << "Let's play a game. I'm thinking of a number. You have 7 tries to guess what it is." << std::endl;
 	int result = getRandomNumber(0, 100);
 	for (int count = 1; count <= 7; count++) {
 		std::cout << "Guess # " << count << ": " << std::endl;
@@ -93,10 +94,10 @@ int main()
 	int defeats = 0;
 
 	do {
-		Game playResult = playGame();
-		if (playResult == Game::LOOSE)
+		Game resultOfHOL = highOrLow();
+		if (resultOfHOL == Game::LOOSE)
 			defeats += 1;
-		else if (playResult == Game::WIN)
+		else if (resultOfHOL == Game::WIN)
 			wins += 1;
 	}
 	while (playAgain() != false);
